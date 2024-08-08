@@ -18,6 +18,7 @@ fi
 curl -L "https://raw.githubusercontent.com/gray1717/spoofDPI_to_router/main/opt/etc/init.d/S8080spoofDPI" -o /opt/etc/init.d/S8080spoofDPI
 chmod +x /opt/etc/init.d/S8080spoofDPI
 
+mkdir /opt/etc/spoofDPI
 curl -L "https://raw.githubusercontent.com/gray1717/spoofDPI_to_router/main/opt/etc/spoofDPI/spoofDPI.conf" -o /opt/etc/spoofDPI/spoofDPI.conf
 
 echo ""
