@@ -9,8 +9,12 @@ opkg install dtach curl
 ````sh
 curl https://raw.githubusercontent.com/gray1717/spoofDPI_to_router/main/install.sh | bash -s linux-arm64
 ````
-запустите spoofDPI c соответствующим адресом вашей подсети<br>
+проверьте настройки, по необходимости измените прослушиваемый адрес и порт
+````
+/opt/etc/spoofDPI/spoofDPI.conf
+````
+запустите spoofDPI
 ````sh
-dtach -n /tmp/spoofDPI spoof-dpi -addr 192.168.1.0/8
+sh /opt/etc/init.d/S8080spoofDPI
 ````
 по умолчанию будет слушать порт 8080, пропишите его в настройках proxy в браузере и адрес вашего роутера
