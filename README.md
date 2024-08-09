@@ -6,9 +6,9 @@
 ````sh
 opkg install dtach curl
 ````
-У меня роутер Asus RT-AC86U, архитекрура arm-64, для него подходит команда
+spoofDPI
 ````sh
-curl https://raw.githubusercontent.com/gray1717/spoofDPI_to_router/main/install.sh | bash -s linux-arm64
+curl https://raw.githubusercontent.com/gray1717/spoofDPI_to_router/main/install.sh | bash
 ````
 проверьте настройки, по необходимости измените прослушиваемый адрес и порт
 ````
