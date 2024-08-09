@@ -6,7 +6,7 @@
 ````sh
 opkg install dtach curl
 ````
-У меня роутер Asus RT-AC86U, архитекрура arm-64, для него подходит команда<br>
+У меня роутер Asus RT-AC86U, архитекрура arm-64, для него подходит команда
 ````sh
 curl https://raw.githubusercontent.com/gray1717/spoofDPI_to_router/main/install.sh | bash -s linux-arm64
 ````
