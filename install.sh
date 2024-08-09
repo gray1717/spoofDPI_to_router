@@ -1,13 +1,29 @@
 #!/bin/bash
 
+case `uname -m`  in
+    aarch64)
+        arch="linux-arm64"
+    ;;
+    mips)
+        arch="linux-mips"
+    ;;
+    mipsel)
+        arch="linux-mipsle"
+    ;;
+    *)
+        echo $(uname -m)" not suppoted"
+        exit
+    ;;
+esac
+
 cd /opt/tmp
 curl "https://api.github.com/repos/xvzc/SpoofDPI/releases/latest" |
     grep '"tag_name":' |
     sed -E 's/.*"([^"]+)".*/\1/' |
-    xargs -I {} curl -OL "https://github.com/xvzc/SpoofDPI/releases/download/"\{\}"/spoof-dpi-${1}.tar.gz"
+    xargs -I {} curl -OL "https://github.com/xvzc/SpoofDPI/releases/download/"\{\}"/spoof-dpi-${arch}.tar.gz"
 
-tar -xzvf /opt/tmp/spoof-dpi-${1}.tar.gz && \
-    rm -rf /opt/tmp/spoof-dpi-${1}.tar.gz && \
+tar -xzvf /opt/tmp/spoof-dpi-${arch}.tar.gz && \
+    rm -rf /opt/tmp/spoof-dpi-${arch}.tar.gz && \
     mv /opt/tmp/spoof-dpi /opt/bin
 
 if [ $? -ne 0 ]; then
