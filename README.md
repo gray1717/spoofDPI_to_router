@@ -1,6 +1,6 @@
 Скрипт установки [spoofDPI](https://github.com/xvzc/SpoofDPI) на роутер, с установленным репозитарием [Entware](https://github.com/Entware/Entware), для обхода блокировки youtube в России
 
-Установка:\n
+Установка:
 dtach и curl
 ````sh
 opkg install dtach curl
