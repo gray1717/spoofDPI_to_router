@@ -3,6 +3,7 @@
 
 # Установка:
 >Проверьте ваше устройство ````uname -m````, должно быть что-то из этого: ````aarch64````, ````mips````, ````mipsel````
+
 Необходимо подключить репозитарй [Entware](https://github.com/Entware/Entware) и установить из него пакеты dtach и curl
 ````sh
 opkg install dtach curl
