@@ -1,11 +1,15 @@
 #!/bin/sh
 
 start() {
-    dtach -n /tmp/spoofDPI spoof-dpi -addr 192.168.1.0/8
+    dtach -n /tmp/spoofDPI spoof-dpi `get_config`
 }
 
 stop() {
     killall spoof-dpi
+}
+
+get_config() {
+    [ -e /opt/etc/spoofDPI/spoofDPI.conf ] && cat /opt/etc/spoofDPI/spoofDPI.conf
 }
 
 case $1 in
