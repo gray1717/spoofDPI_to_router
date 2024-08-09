@@ -18,4 +18,4 @@ curl https://raw.githubusercontent.com/gray1717/spoofDPI_to_router/main/install.
 ````sh
 sh /opt/etc/init.d/S8080spoofDPI start
 ```
-Настройте proxy в браузере, укажите порт из конфигурационного файла ````/opt/etc/spoofDPI/spoofDPI.conf```` и адрес роутера
+Настройте proxy в браузере, укажите порт из конфигурационного файла ```/opt/etc/spoofDPI/spoofDPI.conf``` и адрес роутера
