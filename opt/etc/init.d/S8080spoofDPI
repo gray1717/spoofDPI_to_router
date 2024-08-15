@@ -1,24 +1,9 @@
 #!/bin/sh
 
-start() {
-    dtach -n /tmp/spoofDPI spoof-dpi `get_config`
-}
+ENABLED=yes
+PROCS=spoof-dpi
+ARGS=`[ -f /opt/etc/spoofDPI/spoofDPI.conf ] && cat /opt/etc/spoofDPI/spoofDPI.conf`
+PREARGS="dtach -n /tmp/spoofDPI"
+DESC=$PROCS
 
-stop() {
-    killall spoof-dpi
-}
-
-get_config() {
-    [ -e /opt/etc/spoofDPI/spoofDPI.conf ] && cat /opt/etc/spoofDPI/spoofDPI.conf
-}
-
-case $1 in
-    start)
-	echo "start spoofDPI"
-	start
-    ;;
-    stop)
-	echo "stop spoofDPI"
-	stop
-    ;;
-esac
+. /opt/etc/init.d/rc.func
