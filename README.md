@@ -21,3 +21,10 @@ curl https://raw.githubusercontent.com/gray1717/spoofDPI_to_router/main/install.
 sh /opt/etc/init.d/S8080spoofDPI start
 ````
 Настройте proxy в браузере, укажите порт из конфигурационного файла ````/opt/etc/spoofDPI/spoofDPI.conf```` и адрес роутера
+
+# Сборка пакета *.ipk
+````curl https://raw.githubusercontent.com/gray1717/spoofDPI_to_router/main/ipkg-build | bash````
+или под определенную архитектуру, из этого: ````aarch64````, ````mips````, ````mipsel````
+````curl https://raw.githubusercontent.com/gray1717/spoofDPI_to_router/main/ipkg-build | bash -s aarch64````
+установка как обычно
+````opkg install spoof-dpi*.ipk````
