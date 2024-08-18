@@ -5,11 +5,11 @@
 >Проверьте ваше устройство ````uname -m````, должно быть что-то из этого: ````aarch64````, ````mips````, ````mipsel````
 
 Необходимо подключить репозитарй [Entware](https://github.com/Entware/Entware) и установить из него пакеты dtach и curl
-````sh
+````bash
 opkg install dtach curl
 ````
 spoofDPI
-````sh
+````bash
 curl https://raw.githubusercontent.com/gray1717/spoofDPI_to_router/main/install.sh | bash
 ````
 проверьте настройки, по необходимости измените прослушиваемый адрес и порт
@@ -17,14 +17,20 @@ curl https://raw.githubusercontent.com/gray1717/spoofDPI_to_router/main/install.
 /opt/etc/spoofDPI/spoofDPI.conf
 ````
 запустите spoofDPI
-````sh
+````bash
 sh /opt/etc/init.d/S8080spoofDPI start
 ````
 Настройте proxy в браузере, укажите порт из конфигурационного файла ````/opt/etc/spoofDPI/spoofDPI.conf```` и адрес роутера
 
 # Сборка пакета *.ipk
-````curl https://raw.githubusercontent.com/gray1717/spoofDPI_to_router/main/ipkg-build | bash````
+````bash
+curl https://raw.githubusercontent.com/gray1717/spoofDPI_to_router/main/ipkg-build | bash
+````
 или под определенную архитектуру, из этого: ````aarch64````, ````mips````, ````mipsel````
-````curl https://raw.githubusercontent.com/gray1717/spoofDPI_to_router/main/ipkg-build | bash -s aarch64````
+````bash
+curl https://raw.githubusercontent.com/gray1717/spoofDPI_to_router/main/ipkg-build | bash -s aarch64
+````
 установка как обычно
-````opkg install spoof-dpi*.ipk````
+````bash
+opkg install spoof-dpi*.ipk
+````
