@@ -6,7 +6,6 @@ SourceName: spoof-dpi
 License: GPL-2.0-or-later
 LicenseFiles: COPYING
 Section: net
-SourceDateEpoch: 1720619864
 URL: https://github.com/xvzc/SpoofDPI
 Maintainer: gray1717 <https://github.com/gray1717/spoofDPI_to_router>
 Architecture:
