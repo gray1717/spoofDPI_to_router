@@ -1,0 +1,59 @@
+#!/bin/sh
+
+if [ $# -eq 0 ]
+then
+    a=$(uname -m)
+else
+    a=$1
+fi
+case $a in
+    aarch64)
+        arch="linux-arm64"
+        Architecture=$a"-3.10"
+    ;;
+    mips)
+        arch="linux-mips"
+        Architecture=$a"-3.4"
+    ;;
+    mipsel)
+        arch="linux-mipsle"
+        Architecture=$a"-3.4"
+    ;;
+    *)
+        echo $a" not suppoted"
+        exit
+    ;;
+esac
+
+version=$(curl "https://api.github.com/repos/xvzc/SpoofDPI/releases/latest" |
+    grep '"tag_name":' |
+    sed -E 's/.*"v([^"]+)".*/\1/')
+
+mkdir -p ./DATA/opt/etc/spoofDPI
+curl -L https://raw.githubusercontent.com/gray1717/spoofDPI_to_router/main/opt/etc/spoofDPI/spoofDPI.conf \
+    -o ./DATA/opt/etc/spoofDPI/spoofDPI.conf
+
+mkdir -p ./DATA/opt/etc/init.d
+curl -L https://raw.githubusercontent.com/gray1717/spoofDPI_to_router/main/opt/etc/init.d/S8080spoofDPI \
+    -o ./DATA/opt/etc/init.d/S8080spoofDPI
+chmod +x ./DATA/opt/etc/init.d/S8080spoofDPI
+
+curl -OL "https://github.com/xvzc/SpoofDPI/releases/download/v${version}/spoof-dpi-${arch}.tar.gz"
+mkdir -p ./DATA/opt/bin
+tar -xzvf ./spoof-dpi-${arch}.tar.gz && \
+    rm -rf ./spoof-dpi-${arch}.tar.gz && \
+    mv ./spoof-dpi ./DATA/opt/bin
+if [ $? -ne 0 ]; then
+    echo "Error. exiting now"
+    exit
+fi
+size=$(du --apparent-size -b ./DATA/opt/bin/spoof-dpi | sed "s/\s.*//")
+
+mkdir -p ./DATA/CONTROL
+curl -L https://raw.githubusercontent.com/gray1717/spoofDPI_to_router/main/CONTROL/conffiles \
+    -o ./DATA/CONTROL/conffiles
+curl -L https://raw.githubusercontent.com/gray1717/spoofDPI_to_router/main/CONTROL/control |
+    sed "/Version/s/:\s*/: $version/;/Architecture/s/:\s*/: $Architecture/;/Installed-Size/s/:\s*/: $size/" > ./DATA/CONTROL/control
+
+curl -L https://raw.githubusercontent.com/Entware/Entware/master/scripts/ipkg-build | sh -s ./DATA
+rm -r ./DATA
