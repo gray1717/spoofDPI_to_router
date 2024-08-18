@@ -27,6 +27,7 @@ sh /opt/etc/init.d/S8080spoofDPI start
 >
 > Из под установленного, на роутер, Debian сборка проходит успешно, либо собирайте на компьютере, указав архитектуру роутера
 ````bash
+под архитектуру устройства, на котором производится сборка
 curl https://raw.githubusercontent.com/gray1717/spoofDPI_to_router/main/ipkg-build | bash
 ````
 или под определенную архитектуру, из этого: ````aarch64````, ````mips````, ````mipsel````
