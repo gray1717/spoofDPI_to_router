@@ -47,7 +47,7 @@ if [ $? -ne 0 ]; then
     echo "Error. exiting now"
     exit
 fi
-size=$(du --apparent-size -b ./DATA/opt/bin/spoof-dpi | sed "s/\s.*//")
+size=$(du -b ./DATA/opt/bin/spoof-dpi | sed "s/\s.*//")
 
 mkdir -p ./DATA/CONTROL
 curl -L https://raw.githubusercontent.com/gray1717/spoofDPI_to_router/main/CONTROL/conffiles \
