@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 
 if [ $# -eq 0 ]
 then
@@ -55,5 +55,5 @@ curl -L https://raw.githubusercontent.com/gray1717/spoofDPI_to_router/main/CONTR
 curl -L https://raw.githubusercontent.com/gray1717/spoofDPI_to_router/main/CONTROL/control |
     sed "/Version/s/:\s*/: $version/;/Architecture/s/:\s*/: $Architecture/;/Installed-Size/s/:\s*/: $size/" > ./DATA/CONTROL/control
 
-curl -L https://raw.githubusercontent.com/Entware/Entware/master/scripts/ipkg-build | sh -s ./DATA
+curl -L https://raw.githubusercontent.com/Entware/Entware/master/scripts/ipkg-build | bash -s ./DATA
 rm -r ./DATA
