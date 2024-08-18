@@ -26,6 +26,7 @@ sh /opt/etc/init.d/S8080spoofDPI start
 > У меня на роутере скрипт https://github.com/Entware/Entware/blob/master/scripts/ipkg-build выдает ошибку: ````line 13: command not found````
 >
 > Из под установленного, на роутер, Debian сборка проходит успешно, либо собирайте на компьютере, указав архитектуру роутера
+
 под архитектуру устройства, на котором производится сборка
 ````bash
 curl https://raw.githubusercontent.com/gray1717/spoofDPI_to_router/main/ipkg-build | bash
