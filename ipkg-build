@@ -17,7 +17,7 @@ case $a in
     ;;
     mipsel)
         arch="linux-mips"
-        Architecture=$a"sf"
+        Architecture=$a"-3.4"
     ;;
     *)
         echo $a" not suppoted"
