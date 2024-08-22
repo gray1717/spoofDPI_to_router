@@ -10,7 +10,7 @@ opkg install dtach curl
 ````
 spoofDPI
 ````bash
-curl https://raw.githubusercontent.com/gray1717/spoofDPI_to_router/main/install.sh | bash
+curl -L https://raw.githubusercontent.com/gray1717/spoofDPI_to_router/main/install.sh | bash
 ````
 проверьте настройки, по необходимости измените прослушиваемый адрес и порт
 ````
@@ -29,11 +29,11 @@ sh /opt/etc/init.d/S8080spoofDPI start
 
 под архитектуру устройства, на котором производится сборка
 ````bash
-curl https://raw.githubusercontent.com/gray1717/spoofDPI_to_router/main/ipkg-build | bash
+curl -L https://raw.githubusercontent.com/gray1717/spoofDPI_to_router/main/ipkg-build | bash
 ````
 или под определенную архитектуру, из этого: ````aarch64````, ````mips````, ````mipsel````
 ````bash
-curl https://raw.githubusercontent.com/gray1717/spoofDPI_to_router/main/ipkg-build | bash -s aarch64
+curl -L https://raw.githubusercontent.com/gray1717/spoofDPI_to_router/main/ipkg-build | bash -s aarch64
 ````
 установка как обычно
 ````bash
