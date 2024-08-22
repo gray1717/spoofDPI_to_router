@@ -16,7 +16,7 @@ case $a in
         Architecture=$a"-3.4"
     ;;
     mipsel)
-        arch="linux-mipsle"
+        arch="linux-mips"
         Architecture=$a"sf"
     ;;
     *)
