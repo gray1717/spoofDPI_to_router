@@ -27,7 +27,7 @@ esac
 
 version=$(curl "https://api.github.com/repos/xvzc/SpoofDPI/releases/latest" |
     grep '"tag_name":' |
-    sed -E 's/.*"v?([^"]+)".*/\1/')
+    sed -E 's/.*"([^"]+)".*/\1/')
 
 mkdir -p ./DATA/opt/etc/spoofDPI
 curl -L https://raw.githubusercontent.com/gray1717/spoofDPI_to_router/main/opt/etc/spoofDPI/spoofDPI.conf \
