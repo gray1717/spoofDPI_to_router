@@ -38,16 +38,16 @@ curl -L https://raw.githubusercontent.com/gray1717/spoofDPI_to_router/main/opt/e
     -o ./DATA/opt/etc/init.d/S8080spoofDPI
 chmod +x ./DATA/opt/etc/init.d/S8080spoofDPI
 
-curl -OL "https://github.com/xvzc/SpoofDPI/releases/download/${version}/spoof-dpi-${arch}.tar.gz"
+curl -OL "https://github.com/xvzc/SpoofDPI/releases/download/${version}/spoofdpi-${arch}.tar.gz"
 mkdir -p ./DATA/opt/bin
-tar -xzvf ./spoof-dpi-${arch}.tar.gz && \
-    rm -rf ./spoof-dpi-${arch}.tar.gz && \
-    mv ./spoof-dpi ./DATA/opt/bin
+tar -xzvf ./spoofdpi-${arch}.tar.gz && \
+    rm -rf ./spoofdpi-${arch}.tar.gz && \
+    mv ./spoofdpi ./DATA/opt/bin
 if [ $? -ne 0 ]; then
     echo "Error. exiting now"
     exit
 fi
-size=$(du -b ./DATA/opt/bin/spoof-dpi | sed "s/\s.*//")
+size=$(du -b ./DATA/opt/bin/spoofdpi | sed "s/\s.*//")
 
 mkdir -p ./DATA/CONTROL
 curl -L https://raw.githubusercontent.com/gray1717/spoofDPI_to_router/main/CONTROL/conffiles \
