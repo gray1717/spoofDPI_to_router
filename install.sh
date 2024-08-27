@@ -20,11 +20,11 @@ cd /opt/tmp
 curl "https://api.github.com/repos/xvzc/SpoofDPI/releases/latest" |
     grep '"tag_name":' |
     sed -E 's/.*"([^"]+)".*/\1/' |
-    xargs -I {} curl -OL "https://github.com/xvzc/SpoofDPI/releases/download/"\{\}"/spoof-dpi-${arch}.tar.gz"
+    xargs -I {} curl -OL "https://github.com/xvzc/SpoofDPI/releases/download/"\{\}"/spoofdpi-${arch}.tar.gz"
 
-tar -xzvf /opt/tmp/spoof-dpi-${arch}.tar.gz && \
-    rm -rf /opt/tmp/spoof-dpi-${arch}.tar.gz && \
-    mv /opt/tmp/spoof-dpi /opt/bin
+tar -xzvf /opt/tmp/spoofdpi-${arch}.tar.gz && \
+    rm -rf /opt/tmp/spoofdpi-${arch}.tar.gz && \
+    mv /opt/tmp/spoofdpi /opt/bin
 
 if [ $? -ne 0 ]; then
     echo "Error. exiting now"
