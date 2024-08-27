@@ -1,8 +1,8 @@
-Package: spoof-dpi
+Package: spoofdpi
 Version:
 Depends: dtach
-Source: feeds/packages/net/spoof-dpi
-SourceName: spoof-dpi
+Source: feeds/packages/net/spoofdpi
+SourceName: spoofdpi
 License: GPL-2.0-or-later
 LicenseFiles: COPYING
 Section: net
