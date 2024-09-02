@@ -24,6 +24,7 @@ sh /opt/etc/init.d/S8080spoofDPI start
 
 # Сборка пакета *.ipk
 > У меня на роутере скрипт https://github.com/Entware/Entware/blob/master/scripts/ipkg-build выдает ошибку: ````line 13: command not found````
+>
 > Проверьте ваш busybox ````busybox --list | grep command````, если такая команда поддерживается, можно пробовать собирать на роутере
 >
 > Из под установленного, на роутер, Debian сборка проходит успешно, либо собирайте на компьютере, указав архитектуру роутера
