@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/sh
 
 case `uname -m`  in
     aarch64)
